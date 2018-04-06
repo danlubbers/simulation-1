@@ -30,12 +30,17 @@ h2{
 }
 
 .form-img-preview {
-  width: 320px;
-  height: 200px;
+  width: 220px;
+  height: 100px;
   background-image: url('https://cdn4.iconfinder.com/data/icons/hotel-and-restaurant-vol-4/48/193-512.png');
   margin: auto;
-  background-position-y: -120px;
-  background-position-x: -100px
+  background-position-y: -220px;
+  background-position-x: -140px
+}
+
+.input-field {
+  width: 420px;
+  height: 21px;
 }
 
 .btn {

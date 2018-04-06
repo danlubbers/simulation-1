@@ -1,7 +1,11 @@
+const baseURL = '/api';
+
 module.exports = {
 
     read: (req, res) => {
-        res.send();
+        // axios.get(`${baseURL}/shelfie_products`).then(res=>{
+        //     res.status(200).send()
+        // })   
     },
 
     create: (req, res) => {
@@ -12,7 +16,7 @@ module.exports = {
         res.send();
     },
 
-    update: (req, res) => {
+    delete: (req, res) => {
         res.send();
     }
 
