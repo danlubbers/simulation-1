@@ -1,10 +1,13 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const controller = require('../server/controller');
+const massive = require('massive');
+require('dotenv').config();
 
 const app = express();
 
 app.use(bodyParser.json());
+massive(process.env.Connection_String).then(dbInstance => app.set('db', dbInstance));
 
 // app.get('/api/', controller.read);
 // app.post('/api', controller.create);
