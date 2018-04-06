@@ -6,7 +6,7 @@
   background: #ab2a19;
   margin: auto;
   height: 50px;
-  width: 100vh;
+  width: 100%;
   display: inline-block;
 }
 
@@ -29,6 +29,15 @@ h2{
   border-radius: 15px;
 }
 
+.form-img-preview {
+  width: 320px;
+  height: 200px;
+  background-image: url('https://cdn4.iconfinder.com/data/icons/hotel-and-restaurant-vol-4/48/193-512.png');
+  margin: auto;
+  background-position-y: -120px;
+  background-position-x: -100px
+}
+
 .btn {
   margin: 10px;
 }
@@ -38,6 +47,8 @@ h2{
   border-radius: 5px;
   float: left;
   margin: 25px;
+  width: 100px;
+  height: 25px;
 }
 
 .addBtn {
@@ -45,6 +56,8 @@ h2{
   border-radius: 5px;
   float: right;
   margin: 25px;
+  width: 150px;
+  height: 25px;
 }
 
 .product {

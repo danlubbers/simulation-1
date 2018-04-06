@@ -47,6 +47,9 @@ export default class Form extends Component {
         return(
             <div className="form">
                 <h1>Form</h1>
+                <div className="form-img-preview">
+                    
+                </div>
                 <h4>Image URL:</h4>
                     <input onChange={e=>{this.inputImage(e.target.value)}}/>
                 <h4>Product Name:</h4>
