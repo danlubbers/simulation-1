@@ -9,9 +9,19 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Dashboard />
-        <Form />
-        <Header />
+
+          <div className="header">
+            <Header />
+          </div>
+
+          <div className="dashboard">
+          <Dashboard />
+          </div>
+          
+        <div className="form">
+          <Form />
+        </div>
+        
       </div>
     );
   }

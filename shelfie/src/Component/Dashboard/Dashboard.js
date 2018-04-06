@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import Product from '/Users/danlubbers/devmtn-lessons/week-3/day-5/simulation-1/shelfie/src/Component/Product/Product.js';
+import Product from '../Product/Product.js';
 
 
 export default class Dashboard extends Component {
@@ -8,7 +8,9 @@ export default class Dashboard extends Component {
         return(
             <div>
                 <h1>Dashboard</h1>
-                <p><Product /></p>
+                    <div className="product">
+                        <Product />
+                    </div>
             </div>
         )
     }

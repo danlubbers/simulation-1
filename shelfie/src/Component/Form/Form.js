@@ -11,6 +11,12 @@ export default class Form extends Component {
             imgurl: ''
         }
 
+        this.inputImage = this.inputImage.bind(this);
+        this.inputProduct = this.inputProduct.bind(this);
+        this.inputPrice = this.inputPrice.bind(this);
+        this.addButton = this.addButton.bind(this);
+        this.cancelButton = this.cancelButton.bind(this);
+
     }
 
     inputImage(string) {
@@ -33,22 +39,24 @@ export default class Form extends Component {
         }
     }
 
-    cancelButton() {
-        this.myFormRef('Form').reset();
+    cancelButton(reset) {
+        this.setState({imageurl: reset});
     }
 
     render() {
         return(
-            <div className="Form">
+            <div className="form">
                 <h1>Form</h1>
                 <h4>Image URL:</h4>
-                <input onChange={e=>{this.inputImage(e.target.value)}}/>
+                    <input onChange={e=>{this.inputImage(e.target.value)}}/>
                 <h4>Product Name:</h4>
-                <input onChange={e=>{this.inputProduct(e.target.value)}}/>
+                    <input onChange={e=>{this.inputProduct(e.target.value)}}/>
                 <h4>Price:</h4>
-                <input onChange={e=>{this.inputPrice(e.target.value)}}/><br/>
-                <button onClick={_=>{this.cancelButton()}}>Cancel</button>
-                <button onClick={_=>{this.addButton()}}>Add to Inventory</button>
+                    <input onChange={e=>{this.inputPrice(e.target.value)}}/><br/>
+                <div className="btn">
+                <button className="cancelBtn" onClick={_=>{this.cancelButton()}}>Cancel</button>
+                <button className="addBtn"onClick={_=>{this.addButton()}}>Add to Inventory</button>
+                </div>
             </div>
         )
     }
