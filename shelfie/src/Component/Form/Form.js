@@ -33,11 +33,11 @@ export default class Form extends Component {
 
     addButton() {
         console.log('hey') 
-        let body = {
-            addProduct: this.state.productName,
-            addPrice: this.state.price,
-            addImg: this.state.imageurl
-        }
+        // let body = {
+        //     addProduct: this.state.productName,
+        //     addPrice: this.state.price,
+        //     addImg: this.state.imageurl
+        // }
         this.setState({productName: '', price: '', imageurl: ''})
         console.log("hey, HEY")
         

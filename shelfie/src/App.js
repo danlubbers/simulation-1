@@ -18,10 +18,11 @@ class App extends Component {
   componentDidMount() {
     console.log('Yo')
     axios.get(`${this.state.baseURL}/getAllProducts`).then(res=>{
-      console.log('YOYO')
+      console.log("wrong")
       this.setState({
         productsArray: res.data
       })
+      console.log(res.data)
     })
   }
   render() {
@@ -34,7 +35,7 @@ class App extends Component {
 
           <div className="dashboard">
           <Dashboard />
-          {this.state.productsArray}
+          <div>{JSON.stringify(this.state.productsArray)}</div>
           </div>
 
       </div>
