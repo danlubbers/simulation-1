@@ -13,7 +13,7 @@ massive(process.env.Connection_String).then(dbInstance => app.set('db', dbInstan
 const baseURL = '/api';
 
 // Endpoints
-// app.get(`${baseURL}/shelfie_products`, controller.read);
+app.get(`${baseURL}/getAllProducts`, controller.read);
 // app.post(`${baseURL}/shelfie_products`, controller.create);
 // app.put(`${baseURL}/shelfie_products`, controller.update);
 // app.delete(`${baseURL}/shelfie_products`, controller.delete);

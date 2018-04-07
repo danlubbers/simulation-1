@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import Dashboard from './Component/Dashboard/Dashboard.js';
 import Header from './Component/Header/Header.js';
-// import axios from 'axios';
+import axios from 'axios';
 
 
 class App extends Component {
@@ -15,13 +15,13 @@ class App extends Component {
     }
   }
 
-  // componentDidMount() {
-  //   axios.get(`${this.state.baseURL}/shelfie_products`).then(res=>{
-  //     this.setState({
-  //       productsArray: res.data
-  //     })
-  //   })
-  // }
+  componentDidMount() {
+    axios.get(`${this.state.baseURL}/shelfie_products`).then(res=>{
+      this.setState({
+        productsArray: res.data
+      })
+    })
+  }
   render() {
     return (
       <div className="App">

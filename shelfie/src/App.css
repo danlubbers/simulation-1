@@ -33,9 +33,11 @@ h2{
   width: 220px;
   height: 100px;
   background-image: url('https://cdn4.iconfinder.com/data/icons/hotel-and-restaurant-vol-4/48/193-512.png');
+  background-repeat: no-repeat;
   margin: auto;
-  background-position-y: -220px;
-  background-position-x: -140px
+  background-size: 100px;
+  background-position-x: 60px;
+  
 }
 
 .input-field {
