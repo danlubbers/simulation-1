@@ -5,7 +5,7 @@ module.exports = {
     read: (req, res) => {
         const dbInstance = req.app.get('db');
 
-        dbInstance.read_shelfie_products().then(products => res.status(200).send(products)).catch((err)=>res.status(500).send(err))
+        dbInstance.getAllProducts().then(products => res.status(200).send(products)).catch((err)=>res.status(500).send(err))
 
 
         // axios.get(`${baseURL}/shelfie_products`).then(res=>{

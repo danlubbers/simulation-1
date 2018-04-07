@@ -16,7 +16,9 @@ class App extends Component {
   }
 
   componentDidMount() {
-    axios.get(`${this.state.baseURL}/shelfie_products`).then(res=>{
+    console.log('Yo')
+    axios.get(`${this.state.baseURL}/getAllProducts`).then(res=>{
+      console.log('YOYO')
       this.setState({
         productsArray: res.data
       })
