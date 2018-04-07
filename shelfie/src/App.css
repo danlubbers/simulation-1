@@ -69,10 +69,18 @@ h2{
 
 .product-container {
   background: #d34735;
+  /* display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: flex-end;
+	align-items: flex-start;
+	align-content: stretch; */
+
 }
 
 .products-list {
   background-color: #d34735;
+  width: 400px;
   margin: auto;
   float: left;
   display: flex;
