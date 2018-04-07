@@ -70,3 +70,24 @@ h2{
 .product-container {
   background: #d34735;
 }
+
+.products-list {
+  background-color: #d34735;
+  margin: auto;
+  float: left;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 10px;
+}
+
+.products-image {
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+}
+
+.product-box 	{
+display: inline-block;
+}

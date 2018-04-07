@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import axios from 'axios';
 
 
 export default class Form extends Component {
@@ -8,7 +9,8 @@ export default class Form extends Component {
         this.state = {
             productName: '',
             price: 0,
-            imageurl: ''
+            imageurl: '',
+            baseURL: '/api'
         }
 
         this.inputImage = this.inputImage.bind(this);
@@ -33,13 +35,17 @@ export default class Form extends Component {
 
     addButton() {
         console.log('hey') 
-        // let body = {
-        //     addProduct: this.state.productName,
-        //     addPrice: this.state.price,
-        //     addImg: this.state.imageurl
-        // }
+        let body = {
+            addProduct: this.state.productName,
+            addPrice: this.state.price,
+            addImg: this.state.imageurl
+        }
         this.setState({productName: '', price: '', imageurl: ''})
         console.log("hey, HEY")
+
+        axios.post(`${this.state.baseURL}/shelfie_products`).then(res=> {
+           productName: res.data;
+        })
         
     }
 

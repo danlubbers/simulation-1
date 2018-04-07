@@ -16,7 +16,7 @@ const baseURL = '/api';
 
 // Endpoints
 app.get(`${baseURL}/getAllProducts`, controller.read);
-// app.post(`${baseURL}/shelfie_products`, controller.create);
+app.post(`${baseURL}/shelfie_products`, controller.create);
 // app.put(`${baseURL}/shelfie_products`, controller.update);
 // app.delete(`${baseURL}/shelfie_products`, controller.delete);
 

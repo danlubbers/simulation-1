@@ -10,22 +10,36 @@ class App extends Component {
     super();
 
     this.state = {
-      productsArray: [],
+      products: [],
       baseURL: '/api'
     }
   }
 
   componentDidMount() {
-    console.log('Yo')
     axios.get(`${this.state.baseURL}/getAllProducts`).then(res=>{
-      console.log("wrong")
+      console.log("ARRAY is Loading!!!")
       this.setState({
-        productsArray: res.data
+        products: res.data
       })
       console.log(res.data)
     })
   }
   render() {
+    let productsArray = this.state.products.map((element, index)=> {
+      return(
+        <div key={index} className="products-list">
+        <div>
+          <img  className="products-image" src={element.image_url} alt="arcteryx products"/>
+        </div>
+        <div className="product-box">
+          <h1>{element.name}</h1>
+          <h1>${element.price}</h1>
+        </div> 
+          
+        </div>
+      )
+    })
+
     return (
       <div className="App">
 
@@ -35,7 +49,7 @@ class App extends Component {
 
           <div className="dashboard">
           <Dashboard />
-          <div>{JSON.stringify(this.state.productsArray)}</div>
+          <div>{productsArray}</div>
           </div>
 
       </div>
