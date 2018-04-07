@@ -8,7 +8,7 @@ export default class Form extends Component {
         this.state = {
             productName: '',
             price: 0,
-            imgurl: ''
+            imageurl: ''
         }
 
         this.inputImage = this.inputImage.bind(this);
@@ -43,8 +43,12 @@ export default class Form extends Component {
         
     }
 
-    cancelButton(reset) {
-        this.setState({imageurl: reset});
+    cancelButton() {
+        this.setState({
+            productName: "",
+            price: "",
+            imageurl: "" 
+    });
     }
 
     render() {
@@ -52,7 +56,6 @@ export default class Form extends Component {
             <div className="form">
                 <h1>Form</h1>
                 <div className="form-img-preview">
-
                 </div>
                 <h4>Image URL:</h4>
                     <input className="input-field" value={this.state.imageurl} onChange={e=>{this.inputImage(e.target.value)}} placeholder="Add URL of Image Here"/>
