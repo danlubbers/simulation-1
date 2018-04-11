@@ -13,7 +13,7 @@ export default class Dashboard extends Component {
    
 
     render() {
-
+        // function maps over products array passed through props from App.js and is saved to the productsArray variable.
         let productsArray = this.props.products.map((element, index)=> {
             return(
               <div key={index} className="products-list">
@@ -36,6 +36,7 @@ export default class Dashboard extends Component {
             <div className="dashboard">
                     <div className="product-container">
                         <Product />
+                {/* {after array is mapped over, the productsArray is displayed on our webpage} */}
                     <div>{productsArray}</div>
                     </div>
                     
