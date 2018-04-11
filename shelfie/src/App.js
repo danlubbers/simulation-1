@@ -3,6 +3,8 @@ import './App.css';
 import Dashboard from './Component/Dashboard/Dashboard.js';
 import Header from './Component/Header/Header.js';
 import axios from 'axios';
+import Form from './Component/Form/Form.js';
+
 
 
 class App extends Component {
@@ -13,6 +15,9 @@ class App extends Component {
       products: [],
       baseURL: '/api'
     }
+    this.deleteProduct = this.deleteProduct.bind(this);
+    this.addButton = this.addButton.bind(this);
+    
   }
 
   componentDidMount() {
@@ -24,21 +29,22 @@ class App extends Component {
       console.log(res.data)
     })
   }
-  render() {
-    let productsArray = this.state.products.map((element, index)=> {
-      return(
-        <div key={index} className="products-list">
-        <div>
-          <img  className="products-image" src={element.image_url} alt="arcteryx products"/>
-        </div>
-        <div className="product-box">
-          <h1>{element.name}</h1>
-          <h1>${element.price}</h1>
-        </div> 
-          
-        </div>
-      )
+
+  deleteProduct(id) {
+    axios.delete(`${this.state.baseURL}/shelfie_products/${id}`).then(res=> {
+        this.setState({ products: res.data })
     })
+}
+
+addButton(image, name, price) {
+    axios.post(`${this.state.baseURL}/shelfie_products`, {image: image, name: name, price: price}).then(res => {
+      console.log(res.data)
+      this.setState({products: res.data })
+    })
+}
+
+  render() {
+   
 
     return (
       <div className="App">
@@ -46,12 +52,16 @@ class App extends Component {
           <div className="header">
             <Header />
           </div>
-
           <div className="dashboard">
-          <Dashboard />
-          <div>{productsArray}</div>
+           <Dashboard products={this.state.products}
+                     deleteProduct={this.deleteProduct}
+                     />
+          <div className="form">
+            <Form addButton={this.addButton}/>
           </div>
-
+          
+          </div>
+          
       </div>
     );
   }

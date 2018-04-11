@@ -1,10 +1,10 @@
 import React, {Component} from 'react';
-import axios from 'axios';
+// import axios from 'axios';
 
 
 export default class Form extends Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
 
         this.state = {
             productName: '',
@@ -16,7 +16,6 @@ export default class Form extends Component {
         this.inputImage = this.inputImage.bind(this);
         this.inputProduct = this.inputProduct.bind(this);
         this.inputPrice = this.inputPrice.bind(this);
-        this.addButton = this.addButton.bind(this);
         this.cancelButton = this.cancelButton.bind(this);
 
     }
@@ -33,34 +32,20 @@ export default class Form extends Component {
         this.setState({price: num});
     }
 
-    addButton() {
-        console.log('hey') 
-        let body = {
-            addProduct: this.state.productName,
-            addPrice: this.state.price,
-            addImg: this.state.imageurl
-        }
-        this.setState({productName: '', price: '', imageurl: ''})
-        console.log("hey, HEY")
-
-        axios.post(`${this.state.baseURL}/shelfie_products`).then(res=> {
-           productName: res.data;
-        })
-        
-    }
+    
 
     cancelButton() {
         this.setState({
             productName: "",
-            price: "",
+            price: 0,
             imageurl: "" 
     });
     }
 
     render() {
+        console.log(this.state)
         return(
             <div className="form">
-                <h1>Form</h1>
                 <div className="form-img-preview">
                 </div>
                 <h4>Image URL:</h4>
@@ -68,10 +53,10 @@ export default class Form extends Component {
                 <h4>Product Name:</h4>
                     <input className="input-field" value={this.state.productName} onChange={e=>{this.inputProduct(e.target.value)}} placeholder="Add Product Name Here"/>
                 <h4>Price:</h4>
-                    <input className="input-field" value={this.state.price} onChange={e=>{this.inputPrice(e.target.value)}} placeholder="Add Price or Product Here"/><br/>
+                    <input className="input-field" value={this.state.price} onChange={e=>{this.inputPrice(e.target.value)}} placeholder="Add Price of Product Here"/><br/>
                 <div className="btn">
                 <button className="cancelBtn" onClick={_=>{this.cancelButton()}}>Cancel</button>
-                <button className="addBtn"onClick={_=>{this.addButton()}}>Add to Inventory</button>
+                <button className="addBtn"onClick={_=>{this.props.addButton(this.state.imageurl, this.state.productName, this.state.price)}}>Add to Inventory</button>
                 </div>
             </div>
         )

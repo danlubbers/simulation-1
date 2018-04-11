@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  background-color: #333;
+  
 }
 
 .header {
@@ -12,13 +14,29 @@
 
 img {
   float: left;
-  margin: 20px;
+}
+
+.logo {
+  width: 40px;
+  margin: 5px;
 }
 
 h2{
   float: left;
   color: white;
-  margin: 15px;
+  margin: 8px;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.dashboard {
+  margin: auto;
+  width: 50vh;
+  height: 100vh;
+  display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-around;
+	
 }
 
 .form {
@@ -27,6 +45,7 @@ h2{
   width: 450px;
   background: #3ad886;
   border-radius: 15px;
+   
 }
 
 .form-img-preview {
@@ -68,11 +87,15 @@ h2{
 }
 
 .product-container {
-  background: #d34735;
-  /* display: flex;
+  margin: auto;
+  padding: 0px;
+  width: 50vw;
+  height: 100%;
+  /* background: #d34735;
+  display: flex;
 	flex-direction: column;
 	flex-wrap: nowrap;
-	justify-content: flex-end;
+	justify-content: space-around;
 	align-items: flex-start;
 	align-content: stretch; */
 
@@ -81,15 +104,17 @@ h2{
 .products-list {
   background-color: #d34735;
   width: 400px;
-  margin: auto;
-  float: left;
+  margin: 20px;
+  /* float: left; */
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
   border-radius: 10px;
 }
 
 .products-image {
+  margin: 15px;
   height: 200px;
   display: flex;
   justify-content: center;
@@ -98,4 +123,31 @@ h2{
 
 .product-box 	{
 display: inline-block;
+}
+
+.product-btns {
+margin: auto;
+
+}
+
+.delete-btn {
+  background: #3ad886;
+  border-radius: 5px;
+  float: left;
+  margin: 25px;
+  width: 100px;
+  height: 25px;
+}
+
+.edit-btn {
+  background: #3ad886;
+  border-radius: 5px;
+  float: right;
+  margin: 25px;
+  width: 100px;
+  height: 25px;
+}
+
+h2, h3, h4 {
+  font-family: 'Open Sans', sans-serif;
 }
